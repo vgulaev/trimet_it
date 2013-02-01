@@ -51,6 +51,7 @@
 	$("#output").html("Hello!!!");
 	$.ajax({
 		url: "https://api.github.com/",
+		crossDomain: true,
 		context: document.body
 		}).done(function() {
 		alert("Done");
