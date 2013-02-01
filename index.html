@@ -50,19 +50,10 @@
  <div id="images">
 </div>	
 	<script type="text/javascript">
-	$("#output").html("Hello!!!");
-$.getJSON("https://api.github.com/",
-{
-tags: "mount rainier",
-tagmode: "any",
-format: "json"
-},
-function(data) {
-$.each(data.items, function(i,item){
-$("<img/>").attr("src", item.media.m).appendTo("#images");
-if ( i == 3 ) return false;
-});
-});
-</script>
+		apiParams.url = 'https://api.github.com/users/k33g';
+		//delete apiParams.service;
+		apiParams.dataType = 'jsonp';
+		$.ajax(apiParams); 
+	</script>
   </body>
 </html>
