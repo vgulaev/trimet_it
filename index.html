@@ -49,12 +49,19 @@
 	</div>
 	<script type="text/javascript">
 	$("#output").html("Hello!!!");
+	$.ajax({
+		url: "http://vgulaev.github.com/trimet_it/index1.html",
+		context: document.body
+		}).done(function() {
+		alert("Done");
+	});
+	/*
 var jqxhr = $.get("http://vgulaev.github.com/trimet_it/index1.html", function() {
 alert("success");
 })
 .done(function() { alert("second success"); })
 .fail(function() { alert("error"); })
-.always(function() { alert("finished"); });	
+.always(function() { alert("finished"); });	*/
 </script>
   </body>
 </html>
