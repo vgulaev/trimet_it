@@ -49,6 +49,9 @@
 	</div>
 	<script type="text/javascript">
 	$("#output").html("Hello!!!");
+	$.get("https://api.github.com/", function(data) {
+		$("#output").html(data);
+	});
 	</script>
   </body>
 </html>
