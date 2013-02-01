@@ -50,9 +50,10 @@
  <div id="images">
 </div>	
 	<script type="text/javascript">
-		apiParams.url = 'https://api.github.com/users/k33g';
-		//delete apiParams.service;
-		apiParams.dataType = 'jsonp';
+		apiParams = { 
+		url : 'https://api.github.com/users/k33g',
+		dataType : 'jsonp'
+		};
 		$.ajax(apiParams); 
 	</script>
   </body>
