@@ -49,20 +49,18 @@
 	</div>
 	<script type="text/javascript">
 	$("#output").html("Hello!!!");
-	$.ajax({
-		url: "https://api.github.com/",
-		crossDomain: true,
-		context: document.body
-		}).done(function() {
-		alert("Done");
-	});
-	/*
-var jqxhr = $.get("http://vgulaev.github.com/trimet_it/index1.html", function() {
-alert("success");
-})
-.done(function() { alert("second success"); })
-.fail(function() { alert("error"); })
-.always(function() { alert("finished"); });	*/
+$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+{
+tags: "mount rainier",
+tagmode: "any",
+format: "json"
+},
+function(data) {
+$.each(data.items, function(i,item){
+$("<img/>").attr("src", item.media.m).appendTo("#images");
+if ( i == 3 ) return false;
+});
+});
 </script>
   </body>
 </html>
