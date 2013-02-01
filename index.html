@@ -49,9 +49,12 @@
 	</div>
 	<script type="text/javascript">
 	$("#output").html("Hello!!!");
-	$.get("https://api.github.com/", function(data) {
-		alert("Good");
-	});
-	</script>
+var jqxhr = $.get("https://api.github.com/", function() {
+alert("success");
+})
+.done(function() { alert("second success"); })
+.fail(function() { alert("error"); })
+.always(function() { alert("finished"); });	
+</script>
   </body>
 </html>
