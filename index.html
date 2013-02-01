@@ -4,7 +4,8 @@
   <head>
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script-->
+	<script src="js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
 
       // Load the Visualization API and the piechart package.
@@ -45,16 +46,8 @@
   <body>
     <!--Div that will hold the pie chart-->
     <div id="chart_div"></div>
-	<div id="output">
-	</div>
- <div id="images">
-</div>	
+<div id='table_div'></div>
 	<script type="text/javascript">
-		apiParams = { 
-		url : 'https://api.github.com/users/k33g',
-		dataType : 'jsonp'
-		};
-		$.ajax(apiParams); 
 	</script>
   </body>
 </html>
