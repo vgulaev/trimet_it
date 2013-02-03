@@ -1,4 +1,4 @@
-﻿function creategoogletable(issues) {
+﻿function creategoogletable(issues, table_id) {
 	var data2 = new google.visualization.DataTable();
 	data2.addColumn('string', i18n.title_task());
 	data2.addColumn('string', 'Назначена');
@@ -26,7 +26,7 @@
 	}
 
 	var table = new google.visualization.Table(document
-			.getElementById('table_div'));
+			.getElementById(table_id));
 	table.draw(data2, {
 		showRowNumber : true
 	});
@@ -38,11 +38,23 @@ function createtable() {
 		url : 'https://api.github.com/repos/vgulaev/trimet_it/issues',
 		dataType : 'jsonp',
 		success : function(issues) {
-			creategoogletable(issues);
+			creategoogletable(issues, "table_div_opened_task");
 		}
 	};
-	//$.ajax(apiParams);
-	creategoogletable(answer());
+	$.ajax(apiParams);
+	//creategoogletable(answer());
+}
+
+function createtable_closed_task() {
+	apiParams = {
+		url : 'https://api.github.com/repos/vgulaev/trimet_it/issues?state=closed',
+		dataType : 'jsonp',
+		success : function(issues) {
+			creategoogletable(issues, "table_div_closed_task");
+		}
+	};
+	$.ajax(apiParams);
+	//creategoogletable(answer());
 }
 
 function creategoogletable_commits(commits) {
