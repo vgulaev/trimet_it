@@ -1,10 +1,6 @@
-﻿var str_i18n = function() {
-	// title = {""};
-};
-
-function creategoogletable(issues) {
+﻿function creategoogletable(issues) {
 	var data2 = new google.visualization.DataTable();
-	data2.addColumn('string', 'Название задачи');
+	data2.addColumn('string', i18n.title_task());
 	data2.addColumn('string', 'Назначена');
 	data2.addColumn('date', 'Дата создания');
 	data2.addColumn('date', 'Дата закрытия');
@@ -45,7 +41,8 @@ function createtable() {
 			creategoogletable(issues);
 		}
 	};
-	$.ajax(apiParams);
+	//$.ajax(apiParams);
+	creategoogletable(answer());
 }
 
 function creategoogletable_commits(commits) {
