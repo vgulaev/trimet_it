@@ -1,7 +1,7 @@
 ﻿var i18n = function() {
 
-	this.userLang = (navigator.language) ? navigator.language
-			: navigator.userLanguage;
+	this.userLang = ((navigator.language) ? navigator.language
+			: navigator.userLanguage).substr(0, 2);
 
 	this.title_task = function() {
 		var str = {
