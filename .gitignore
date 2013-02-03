@@ -2,6 +2,7 @@
 ## Eclipse
 #################
 .project
+.settings/
 
 #############
 ## standarts lib
