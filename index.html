@@ -30,12 +30,12 @@
 		<div id="lang">
 			<ul>
 				<li>
-					<div>
+					<div onclick="i18n.translatepage('ru')">
 						По русски
 					</div>
 				</li>
 				<li>
-					<div>
+					<div onclick="i18n.translatepage('en')">
 						On English
 					</div>
 				</li>
@@ -46,10 +46,10 @@
 		<div id="reporttab">
 			<ul>
 				<li>
-					<a href="#table_div_1" i18nid="Opentask">Открытые задачи</a>
+					<a href="#table_div_1" i18nid="opentasks">Открытые задачи</a>
 				</li>
 				<li>
-					<a href="#table_div_2">Закрытые задачи</a>
+					<a href="#table_div_2" i18nid="closedtasks">Закрытые задачи</a>
 				</li>
 			</ul>
 			<div id='table_div_1'>
@@ -65,8 +65,8 @@
 		</div>
 		<script type="text/javascript">
 			//answer()
-			createtable();
-			createtable_closed_task();
+			//createtable();
+			//createtable_closed_task();
 		</script>
 	</body>
 </html>

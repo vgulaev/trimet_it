@@ -2,7 +2,7 @@
 	var data2 = new google.visualization.DataTable();
 	data2.addColumn('string', i18n.title_task());
 	data2.addColumn('string', i18n.assignee());
-	data2.addColumn('date', i18n.assignee());
+	data2.addColumn('date', i18n.createddate());
 	data2.addColumn('date', 'Дата закрытия');
 	data2.addColumn('string', 'Состояние');
 	//data2.addColumn('string', 'Ссылка');
@@ -111,3 +111,8 @@ function table_with_working_day() {
 	makepagingajax();
 
 }
+
+$(document).ready(function() {
+	i18n.translatepage();
+	//ipanel = new improvepanel();
+})
