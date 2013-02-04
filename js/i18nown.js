@@ -19,7 +19,7 @@
 
 	this.assignee = function() {
 		var str = {
-			"ru" : 'Назначена',
+			"ru" : 'Исполнитель',
 			"en" : 'Assignee'
 		}
 		return str[this.userLang];
