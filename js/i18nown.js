@@ -10,7 +10,19 @@
 		}
 		return str[this.userLang];
 	}
-	// alert ("The language is: " + userLang);
-
-	// title = {""};
+	
+	this.assignee = function() {
+		var str = {
+			"ru" : 'Назначена',
+			"en" : 'Assignee'
+		}
+		return str[this.userLang];
+	}
+	this.assignee = function() {
+		var str = {
+			"ru" : 'Дата создания',
+			"en" : 'Created date'
+		}
+		return str[this.userLang];
+	}
 };

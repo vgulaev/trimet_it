@@ -1,10 +1,11 @@
 ﻿function creategoogletable(issues, table_id) {
 	var data2 = new google.visualization.DataTable();
 	data2.addColumn('string', i18n.title_task());
-	data2.addColumn('string', 'Назначена');
-	data2.addColumn('date', 'Дата создания');
+	data2.addColumn('string', i18n.assignee());
+	data2.addColumn('date', i18n.assignee());
 	data2.addColumn('date', 'Дата закрытия');
 	data2.addColumn('string', 'Состояние');
+	//data2.addColumn('string', 'Ссылка');
 
 	for ( var i in issues.data) {
 		if (issues.data[i].closed_at == null) {
@@ -22,7 +23,7 @@
 		}
 		data2.addRow([ issues.data[i].title, assignee_login,
 				new Date(Date.parse(issues.data[i].created_at)), closed_at,
-				issues.data[i].state ]);
+				issues.data[i].state]);
 	}
 
 	var table = new google.visualization.Table(document
@@ -42,7 +43,7 @@ function createtable() {
 		}
 	};
 	$.ajax(apiParams);
-	//creategoogletable(answer());
+	// creategoogletable(answer());
 }
 
 function createtable_closed_task() {
@@ -54,7 +55,7 @@ function createtable_closed_task() {
 		}
 	};
 	$.ajax(apiParams);
-	//creategoogletable(answer());
+	// creategoogletable(answer());
 }
 
 function creategoogletable_commits(commits) {
@@ -65,16 +66,16 @@ function creategoogletable_commits(commits) {
 		d.setMinutes(0);
 		d.setSeconds(0);
 		d.setMilliseconds(0);
-		//data2.addRow([ d, commits.data[i].commit.author.name ]);
+		// data2.addRow([ d, commits.data[i].commit.author.name ]);
 		data2.push({
-		date: d,
-		commiter: commits.data[i].commit.author.name
+			date : d,
+			commiter : commits.data[i].commit.author.name
 		})
 	}
 
 	if (commits.meta.hasOwnProperty("Link")) {
 		if (commits.meta.Link[0][1].rel == "next") {
-			//alert("next");
+			// alert("next");
 			makepagingajax(commits.meta.Link[0][0]);
 			var table = new google.visualization.Table(document
 					.getElementById('table_div'));
@@ -101,9 +102,10 @@ function makepagingajax(_loc) {
 }
 
 function table_with_working_day() {
-	/*data2 = new google.visualization.DataTable();
-	data2.addColumn('date', 'День работы');
-	data2.addColumn('string', 'Работник');*/
+	/*
+	 * data2 = new google.visualization.DataTable(); data2.addColumn('date',
+	 * 'День работы'); data2.addColumn('string', 'Работник');
+	 */
 	data2 = new Array();
 
 	makepagingajax();
