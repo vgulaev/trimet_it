@@ -48,7 +48,7 @@ function createtable() {
 
 function createtable_closed_task() {
 	apiParams = {
-		url : 'https://api.github.com/repos/vgulaev/trimet_it/issues?state=closed',
+		url : 'https://api.github.com/repos/vgulaev/trimet_it/issues?state=closed&sort=updated',
 		dataType : 'jsonp',
 		success : function(issues) {
 			creategoogletable(issues, "table_div_closed_task");
